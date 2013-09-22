@@ -133,12 +133,12 @@ class OperatorOverloadingKoans extends Koans  {
 	}
 	void testEqualsOperator() {
 		holder.value = 1
-		assertEquals __, holder == 1
+		assertEquals __, holder == new Holder(value: 1)
 	}
 	
 	void testNotEqualsOperator() {
 		holder.value = 1
-		assertEquals __, holder != 1
+		assertEquals __, holder != new Holder(value: 1)
 	}
 	
 	void testCompareToOperator() {
@@ -217,7 +217,7 @@ switch(a) { case(b) : }	 b.isCase(a)
 	def positive() { value = value < 0 ? -1 * value : value }
 	def negative() { value = value > 0 ? -1 * value : value }
 	
-	def boolean equals(x) { value.equals(x) }
+	def boolean equals(x) { value.equals(x.value) }
 	def int compareTo(x) { value.compareTo(x.value) }
 
 	
